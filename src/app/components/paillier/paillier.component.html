@@ -1,0 +1,26 @@
+<div class="sign-container">
+    <form [formGroup]="textToPaillier" style="padding-bottom: 10px; width: 800px;" class="sign">
+        <span class="sign-header">Messages</span>
+        <label style=" margin-bottom: 20px;">Message 1<input formControlName="messagetopaillier1" type="bigint"
+                placeholder="Introduce your message"></label>
+        <label style=" margin-bottom: 20px;">Message 2<input formControlName="messagetopaillier2" type="bigint"
+                placeholder="Introduce your message"></label>
+
+        <div style="width: 62%; display: inline-flex; justify-content: center; margin-bottom: 20px;">
+            <div style="margin-right: 4%; display: flex; flex-direction: column; width: 62%;">
+            </div>
+        </div>
+        <button (click)="messageToPaillier()" class="sign-button" type="button"><b>Apply paillier</b></button>
+        <div class="limit">
+            <p>Mensaje encriptado: {{paillierMessage?.paillier}} </p>
+        </div>
+        <label style=" margin-bottom: 20px;">Desencriptar el paillier<input formControlName="messagetounpaillier" type="bigint"
+                placeholder="Message to be unpailliered"></label>
+        <button (click)="messageToUnpaillier()" class="sign-button" type="button"><b>Verify</b></button>
+        <div class="limit">
+            <p>Mensaje desencriptado: {{unpaillierMessage?.unpaillier}}</p>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,10 @@
+<button (click)="onGenerarclaus()">Generar claus</button>
+<div *ngIf="rsaKeys">
+  <h2>Clau pública:</h2>
+  <p>e: {{rsaKeys.publicKey.e}}</p>
+  <p>n: {{rsaKeys.publicKey.n}}</p>
+  <h2>Clau privada:</h2>
+  <p>d: {{rsaKeys.privateKey.d}}</p>
+  <p>n: {{rsaKeys.privateKey.n}}</p>
+  <button></button>
+</div>
