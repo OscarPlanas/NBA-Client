@@ -15,21 +15,9 @@ const navOptions = [
         exact: true,
     },
     {
-        name: 'Sign/Verify',
-        path: '/sign-verify',
-        icon: '../assets/sign.png',
-        exact: true,
-    },
-    {
-        name: 'Blind Sign',
-        path: '/blind-sign',
-        icon: '../assets/blind.png',
-        exact: true,
-    },
-    {
-        name: 'Paillier',
-        path: '/paillier',
-        icon: '../assets/paillier.png',
+        name: 'Vote',
+        path: '/introduce-username',
+        icon: '../assets/vote.png',
         exact: true,
     },
     

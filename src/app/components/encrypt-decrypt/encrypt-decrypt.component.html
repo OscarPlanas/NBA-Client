@@ -6,12 +6,12 @@
       <div style="margin-right: 4%; display: flex; flex-direction: column; width: 62%;">
       </div>
   </div>
-      <button (click)="encryptMessage()" class="encrypt-button" type="button"><b>Encrypt</b></button>
+      <button class="encrypt-button" type="button"><b>Encrypt</b></button>
       <div class="limit">
         <p>Mensaje encriptado: {{encryptedMessage?.encrypted2}}</p>
     </div>
     <label style=" margin-bottom: 20px;">Decrypt your message<input formControlName="messagetodecrypt" type="bigint" placeholder="Message to be decrypted" ></label>
-    <button (click)="decryptMessage()" class="encrypt-button" type="button"><b>Decrypt</b></button>
+    <button class="encrypt-button" type="button"><b>Decrypt</b></button>
     <div class="limit">
       <p>Mensaje desencriptado: {{decryptedMessage?.decrypted}}</p>
     </div>
