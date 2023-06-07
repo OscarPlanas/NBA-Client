@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import axios from 'axios';
+import { Router } from '@angular/router';
 
 interface Message {
   message: string;
@@ -15,7 +16,7 @@ export class IntroduceUsernameComponent implements OnInit {
   introduceUsername: FormGroup;
   message?: Message;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private router: Router) { 
     this.introduceUsername = this.formBuilder.group({});
 
   }
@@ -44,6 +45,7 @@ export class IntroduceUsernameComponent implements OnInit {
       console.log(res.data.status);
       this.message = res.data.status;
     }
+    // Realizar la redirección al componente "voting-page"
+    this.router.navigate(['/voting-page']);
   }  
-
 }

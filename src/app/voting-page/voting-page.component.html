@@ -1,0 +1,12 @@
+<div class="voting-page">
+    <h2>Elige al MVP del partido:</h2>
+    <div class="buttons-container">
+      <button (click)="vote('Jugador A')">Jugador A</button>
+      <button (click)="vote('Jugador B')">Jugador B</button>
+      <button (click)="vote('Jugador C')">Jugador C</button>
+    </div>
+    <div *ngIf="votedPlayer" class="voted-message">
+      Has votado por {{ votedPlayer }} como el MVP del partido.
+    </div>
+  </div>
+  
