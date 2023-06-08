@@ -14,7 +14,7 @@ interface Message {
 })
 export class IntroduceUsernameComponent implements OnInit {
   introduceUsername: FormGroup;
-  message?: Message;
+  responseData?: Message;
 
   constructor(private formBuilder: FormBuilder, private router: Router) { 
     this.introduceUsername = this.formBuilder.group({});
@@ -32,20 +32,23 @@ export class IntroduceUsernameComponent implements OnInit {
     console.log('Creating anonimous user: ', this.introduceUsername.value.username);
     const mess = this.introduceUsername.value.username;
     const res = await axios.post(`http://localhost:5432/api/users/createAnonymousIdentity/${mess}`)
-    console.log(res.data); 
-    if (res.data.status == 202) {
-      console.log("User does not exist");
-      this.message = res.data;
+    console.log(res.data);
+    //this.responseData = { message: res.data.toString()}
+    
+    if (res.data == 'User does not exist') {
+      console.log('User does not exist');
+      this.responseData = { message: res.data.toString()};
 
-    } else if (res.data.status == 201) {
+    } else if (res.data == 'User has already voted') {
       console.log("User already exists");
-      this.message = res.data;
-    } else {
+      this.responseData = { message: res.data.toString()};
+    } else if (res.data.status == 'AnonymousIdentity saved'){
 
       console.log(res.data.status);
-      this.message = res.data.status;
+      this.responseData = { message: res.data.status.toString()};
+      this.router.navigate(['/voting-page']);
     }
     // Realizar la redirección al componente "voting-page"
-    this.router.navigate(['/voting-page']);
+    
   }  
 }

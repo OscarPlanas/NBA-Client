@@ -7,7 +7,7 @@ import { EncryptDecryptComponent } from './components/encrypt-decrypt/encrypt-de
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { IntroduceUsernameComponent } from './components/introduce-username/introduce-username.component';
-import { VotingPageComponent } from './voting-page/voting-page.component';
+import { VotingPageComponent } from './components/voting-page/voting-page.component';
 
 @NgModule({
   declarations: [
