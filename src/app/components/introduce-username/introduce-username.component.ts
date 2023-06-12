@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import axios from 'axios';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/data/hash';
+import { getLocaleCurrencySymbol } from '@angular/common';
 
 interface Message {
   message: string;
@@ -16,7 +18,7 @@ export class IntroduceUsernameComponent implements OnInit {
   introduceUsername: FormGroup;
   responseData?: Message;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { 
+  constructor(private formBuilder: FormBuilder, private router: Router, private sharedService: SharedService) { 
     this.introduceUsername = this.formBuilder.group({});
 
   }
@@ -46,6 +48,9 @@ export class IntroduceUsernameComponent implements OnInit {
 
       console.log(res.data.status);
       this.responseData = { message: res.data.status.toString()};
+      this.sharedService.hash = res.data.useranonymousid['anonymousid'];
+      console.log(this.sharedService.hash);
+      console.log(res.data.useranonymousid['anonymousid']);
       this.router.navigate(['/voting-page']);
     }
     // Realizar la redirección al componente "voting-page"
