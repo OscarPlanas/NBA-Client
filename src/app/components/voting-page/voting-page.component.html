@@ -1,10 +1,9 @@
 <div class="voting-page">
-    <h2>Elige al MVP del partido:</h2>
-    <div class="player-row" *ngFor="let row of playerRows">
-      <button *ngFor="let player of row" (click)="vote(player)">{{ player }}</button>
-    </div>
-    <div *ngIf="votedPlayer" class="voted-message">
-      Has votado por {{ votedPlayer }} como el MVP del partido.
-    </div>
+  <h2>Elige al MVP del partido:</h2>
+  <div class="player-row" *ngFor="let row of playerRows">
+    <button *ngFor="let player of row" (click)="vote(player.name, player.id)">{{ player.name }}</button>
   </div>
-  
+  <div *ngIf="votedPlayer" class="voted-message">
+    Has votado por {{ votedPlayer }} como el MVP del partido.
+  </div>
+</div>
