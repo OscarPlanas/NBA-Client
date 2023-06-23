@@ -16,6 +16,7 @@ export class VoteCountComponent implements OnInit {
     this.fetchPlayers();
   }
 
+  //Cogemos los jugadores con los votos desencriptados
   fetchPlayers(): void {
     axios.get<any[]>('http://localhost:5432/api/users/getAllPlayers')
       .then(response => {
