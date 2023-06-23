@@ -1,0 +1,19 @@
+<div class="player-list-container">
+    <ul class="player-list">
+        <h2>Player List</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Votes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let player of players">
+                <td>{{ player.name }}</td>
+                <td>{{ player.votes }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </ul>
+  </div>

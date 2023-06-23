@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { IntroduceUsernameComponent } from './components/introduce-username/introduce-username.component';
 import { VotingPageComponent } from './components/voting-page/voting-page.component';
+import { VoteCountComponent } from './components/vote-count/vote-count.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { VotingPageComponent } from './components/voting-page/voting-page.compon
     ClickOutsideDirective,
     IntroduceUsernameComponent,
     VotingPageComponent,
+    VoteCountComponent,
 
   ],
   imports: [

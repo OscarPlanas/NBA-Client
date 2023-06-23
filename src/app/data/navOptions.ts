@@ -7,6 +7,12 @@ const navOptions = [
         icon: '../assets/vote.png',
         exact: true,
     },
+    {
+        name: 'Vote Count',
+        path: '/vote-count',
+        icon: '../assets/vote-count.png',
+        exact: true,
+    },
     
 ];
 

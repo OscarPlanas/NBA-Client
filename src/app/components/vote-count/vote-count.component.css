@@ -1,0 +1,13 @@
+.player-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+  
+  .player-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
